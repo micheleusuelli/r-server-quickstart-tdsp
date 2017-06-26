@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n\n\n# load-packages -----------------------------------------------------------\n\n# load the packages\npackages_to_load <- intersect(readLines(\"config/0-packages.txt\"),\n                                rownames(installed.packages()))\ninvisible(sapply(packages_to_load, library, character.only = TRUE))\n\n# load the personal library\nfiles_to_source <- list.files(\"lib\",\n                              full.names = TRUE,\n                              recursive = TRUE,\n                              pattern = \"[.]R$\")\ninvisible(sapply(files_to_source, source))\n\n\n\n# load-parameters ---------------------------------------------------------\n\npar <- jsonlite::fromJSON(\"config/1-parameters.json\")\n\n\n\n# define-data-sources -----------------------------------------------------\n\nxdf <- list(\n  raw = file.path(par$folder_data_processed, par$xdf_raw),\n  cleaned = file.path(par$folder_data_processed, par$xdf_cleaned)\n) %>% lapply(RxXdfData)\n\n\n\n",
+    "created" : 1498476106745.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1656757178",
+    "id" : "D8D921A9",
+    "lastKnownWriteTime" : 1498476378,
+    "last_content_update" : 1498476378248,
+    "path" : "C:/Users/micheleu/OneDrive - Microsoft/Documents/1_docs_microsoft/3_docs_projects/2_community/1_aa_community/4-code/tdsp-r-project/explore-data/0-config.R",
+    "project_path" : "0-config.R",
+    "properties" : {
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

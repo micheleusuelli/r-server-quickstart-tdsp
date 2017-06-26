@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n# load and clean the data\n\n# configure ---------------------------------------------------------------\n\nrm(list = ls())\nsource(\"0-config.R\")\n\n\n# load --------------------------------------------------------------------\n\n# load\ndf_in <- iris\n\n\n\n# explore -----------------------------------------------------------------\n\ninput <- list(Species = iris$Species[1])\n\napp <- shinyApp(\n  \n  ui = fluidPage(\n    # title\n    h1(\"Chart\"),\n    \n    fluidRow(\n      column(2,\n             selectInput(inputId = \"Species\", label = \"Species\",\n                         choices = df_in$Species %>% \n                           unique,\n                         selected = 1))\n      \n    ),\n    \n    fluidRow(\n      plotOutput(\"chartout\")\n    ),\n    \n    fluidRow(\n      dataTableOutput(outputId = \"tableout\")\n    )\n    \n  ),\n  \n  server = function(input, output) {\n    \n    output$chartout <- renderPlot({\n      df_in %>% \n        filter(Species == input$Species) %>% \n        ggplot(aes(x = Sepal.Length, y = Sepal.Width)) +\n        geom_point() +\n        ggtitle(sprintf(\"sepal scatterplot for %s\", input$Species))\n    })\n    \n    output$tableout <- renderDataTable({\n      df_in %>% \n        filter(Species == input$Species)\n    })\n    \n  }\n  \n)\n\nrunApp(app)\n\n\n",
+    "created" : 1498476355871.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "903184060",
+    "id" : "59547E24",
+    "lastKnownWriteTime" : 1495015680,
+    "last_content_update" : 1495015680,
+    "path" : "C:/Users/micheleu/OneDrive - Microsoft/Documents/1_docs_microsoft/3_docs_projects/2_community/1_aa_community/4-code/tdsp-r-project/explore-data/2-visualise-data-shiny.R",
+    "project_path" : "2-visualise-data-shiny.R",
+    "properties" : {
+    },
+    "relative_order" : 5,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

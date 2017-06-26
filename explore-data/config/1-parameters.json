@@ -1,0 +1,11 @@
+{
+  
+  "folder_data_raw": ["../data-raw"], // data folder
+  "folder_data_processed": ["../data-processed"], // data folder
+  
+  "csv_in": ["iris.csv"], // input csv
+  
+  "xdf_raw": ["raw.xdf"], // raw data
+  "xdf_cleaned": ["cleaned.xdf"] // cleaned data
+
+}

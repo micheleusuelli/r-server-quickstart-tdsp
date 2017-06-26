@@ -1,0 +1,21 @@
+{
+    "collab_server" : "",
+    "contents" : "{\n  \n  \"folder_data_raw\": [\"../data-raw\"], // data folder\n  \"folder_data_processed\": [\"../data-processed\"], // data folder\n  \n  \"csv_in\": [\"iris.csv\"], // input csv\n  \n  \"xdf_raw\": [\"raw.xdf\"], // raw data\n  \"xdf_cleaned\": [\"cleaned.xdf\"] // cleaned data\n\n}\n",
+    "created" : 1498476047856.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1649051784",
+    "id" : "8F1E2BDA",
+    "lastKnownWriteTime" : 1498476219,
+    "last_content_update" : 1498476219550,
+    "path" : "C:/Users/micheleu/OneDrive - Microsoft/Documents/1_docs_microsoft/3_docs_projects/2_community/1_aa_community/4-code/tdsp-r-project/explore-data/config/1-parameters.json",
+    "project_path" : "config/1-parameters.json",
+    "properties" : {
+        "marks" : "<:5,3\n>:5,8"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "json"
+}

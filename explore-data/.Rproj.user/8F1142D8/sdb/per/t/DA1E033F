@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n# load and clean the data\n\n# configure ---------------------------------------------------------------\n\nrm(list = ls())\nsource(\"0-config.R\")\n\n\n\n# parse-terminal-arguments ------------------------------------------------\n\n# parse the terminal arguments\npar_terminal <- parseArgNamed()\n\n\n\n# import-data -------------------------------------------------------------\n\ncsv_in <- file.path(par$folder_data_raw, par$csv_in) %>% \n  RxTextData()\n\nrxDataStep(inData = csv_in, \n           outFile = xdf$raw, \n           overwrite = TRUE)\nrxGetVarInfo(xdf$raw)\n\n\n\n# clean-data --------------------------------------------------------------\n\nrxFactors(inData = xdf$raw, \n           outFile = xdf$cleaned, \n          factorInfo = \"Species\",\n           overwrite = TRUE)\nrxGetVarInfo(xdf$cleaned)\n",
+    "created" : 1498476162090.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "519077578",
+    "id" : "DA1E033F",
+    "lastKnownWriteTime" : 1498476355,
+    "last_content_update" : 1498476355460,
+    "path" : "C:/Users/micheleu/OneDrive - Microsoft/Documents/1_docs_microsoft/3_docs_projects/2_community/1_aa_community/4-code/tdsp-r-project/explore-data/1-clean-data.R",
+    "project_path" : "1-clean-data.R",
+    "properties" : {
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
